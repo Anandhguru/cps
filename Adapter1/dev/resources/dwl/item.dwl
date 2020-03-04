@@ -13,6 +13,8 @@ Products:
     if((item.itemIdentification.itemName) != null) (item.itemIdentification.itemName) else '',
     "Description":
     if((item.*description) != null) (item.*description) else '',
+	"UnitID":
+    if((item.tradeItemBaseUnitOfMeasure) != null)item.tradeItemBaseUnitOfMeasure else '',
     "ProductGroupID":
     if((item.classifications.itemFamilyGroup) != null) item.classifications.itemFamilyGroup else '',
     "ActiveFrom":
