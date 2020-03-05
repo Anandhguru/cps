@@ -1,4 +1,4 @@
 %dw 2.0
 output application/json
 ---
-payload.one + payload.two
+"Ans is " ++ (payload.one + payload.two) as String
