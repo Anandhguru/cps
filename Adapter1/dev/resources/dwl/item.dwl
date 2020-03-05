@@ -16,9 +16,5 @@ Products:
 	"UnitID":
     if((item.tradeItemBaseUnitOfMeasure) != null)item.tradeItemBaseUnitOfMeasure else '',
     "ProductGroupID":
-    if((item.classifications.itemFamilyGroup) != null) item.classifications.itemFamilyGroup else '',
-    "ActiveFrom":
-    if((item.status.effectiveDateTime) != null) item.status.effectiveDateTime else '',
-    "ActiveUpTo":
-    if((item.status.discontinueDateTime) != null) item.status.discontinueDateTime else ''
+    if((item.classifications.itemFamilyGroup) != null) item.classifications.itemFamilyGroup else ''
     })})
