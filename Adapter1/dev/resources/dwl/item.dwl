@@ -11,8 +11,7 @@ Products:
     if((item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) != null) (item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) else '',
     "Name":
     if((item.itemIdentification.itemName) != null) (item.itemIdentification.itemName) else '',
-    "Description":
-    if((item.*description) != null) (item.*description) else '',
+   
 	"UnitID":
     if((item.tradeItemBaseUnitOfMeasure) != null)item.tradeItemBaseUnitOfMeasure else '',
     "ProductGroupID":
