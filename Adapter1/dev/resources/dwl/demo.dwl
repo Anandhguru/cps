@@ -1,6 +1,6 @@
 %dw 2.0
 output application/json
-var function = attributes.headers.fun
+var function = attributes.headers.function
 var data = attributes.headers.data
 var value = read(attributes.headers.value,"application/json")
 var mapped = (({(payload.itemMessage.*item map(item,index) -> (getOperationType(item)) : {
