@@ -23,4 +23,4 @@ var mapped =
 fun dynamic(function,data,value) = if(function == "add") (if(data == "field") mapped map ($ ++ value) else (mapped + value))
 else (if(data == "field") mapped map ($ -- value) else (mapped - value))
 ---
-if(attributes.headers.fun == null) (mapped) else dynamic(function,data,value)
+if(function == null) (mapped) else dynamic(function,data,value)
