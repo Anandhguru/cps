@@ -1,4 +1,5 @@
 %dw 2.0
+import * from dw::core::Objects
 output application/json
 var function = attributes.headers.function
 var data = attributes.headers.data
@@ -21,6 +22,6 @@ var mapped =
     if((item.status.discontinueDateTime) != null) item.status.discontinueDateTime else ''
     }))
 fun dynamic(function,data,value) = if(function == "add") (if(data == "field") mapped map ($ ++ value) else (mapped + value))
-else (if(data == "field") mapped map ($ -- value) else (mapped - value))
+else (if(data == "field") mapped map ($ -- value) else (mapped map (if(valueSet($) contains value.ProductId) "" else $)) - "")
 ---
 if(function == null) (mapped) else dynamic(function,data,value)
