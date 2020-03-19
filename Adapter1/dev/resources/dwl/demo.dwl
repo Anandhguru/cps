@@ -2,7 +2,7 @@
 output application/json
 var function = attributes.headers.function
 var data = attributes.headers.data
-var value = (read(attributes.headers.value,"application/json")) if(attributes.headers.value != null) 
+var value = if(attributes.headers.value != null) (read(attributes.headers.value,"application/json")) else {} 
 var mapped = 
 (payload.itemMessage.*item map(item,index) -> ( {
     "ProductId": 
