@@ -1,5 +1,5 @@
 %dw 2.0
-output application/xml
+output application/json
 
 fun getOperationType(item) =
     if(item.documentActionCode == "ADD") "Record"
