@@ -7,8 +7,7 @@ fun getOperationType(item) =
     else ""
 
 ---
-Products:
-({(payload.itemMessage.*item map(item,index) -> (getOperationType(item)) : {
+(payload.itemMessage.*item map(item,index) ->  {
     "ProductId": 
     if((item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) != null) (item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) else '',
     "Name":
@@ -23,4 +22,4 @@ Products:
     if((item.status.effectiveDateTime) != null) item.status.effectiveDateTime else '',
     "ActiveUpTo":
     if((item.status.discontinueDateTime) != null) item.status.discontinueDateTime else ''
-    })})
+    })
