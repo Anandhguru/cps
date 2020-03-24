@@ -18,6 +18,6 @@ fun getOperationType(item) =
      item.classifications.itemFamilyGroup) if((item.classifications.itemFamilyGroup) != null),
     ("ActiveFrom": 
      item.status.effectiveDateTime) if((item.status.effectiveDateTime) != null),
-    ("ActiveTo":
+    ("ActiveUpto":
      item.status.discontinueDateTime) if((item.status.discontinueDateTime) != null) 
     }))}
