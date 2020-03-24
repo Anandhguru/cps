@@ -11,7 +11,7 @@ fun getOperationType(item) =
     ("NAME":
      (item.itemIdentification.itemName)) if((item.itemIdentification.itemName) != null),
     ("DESCRIPTION":
-     (item.*description)) if((item.*description) != null),
+     (item.description)) if((item.description) != null),
     ("UNITID":
     item.tradeItemBaseUnitOfMeasure) if((item.tradeItemBaseUnitOfMeasure) != null) ,
     ("PRODUCTGROUPID":
