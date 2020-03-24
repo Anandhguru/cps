@@ -7,17 +7,17 @@ fun getOperationType(item) =
     else ""
 ---
 "Products":{(payload.itemMessage.*item map(item,index) -> (getOperationType(item)) : ({
-    ("ProductId": if((item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) != null)  (item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) else fail("ProductId Not Found")) ,
-    ("Name":
+    ("PRODUCTID": if((item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) != null)  (item.itemIdentification.additionalTradeItemIdentification.@additionalTradeItemIdentificationTypeCode) else fail("ProductId Not Found")) ,
+    ("NAME":
      (item.itemIdentification.itemName)) if((item.itemIdentification.itemName) != null),
-    ("Description":
+    ("DESCRIPTION":
      (item.*description)) if((item.*description) != null),
-    ("UnitID":
+    ("UNITID":
     item.tradeItemBaseUnitOfMeasure) if((item.tradeItemBaseUnitOfMeasure) != null) ,
-    ("ProductGroupID":
+    ("PRODUCTGROUPID":
      item.classifications.itemFamilyGroup) if((item.classifications.itemFamilyGroup) != null),
-    ("ActiveFrom": 
+    ("ACTIVEFROM": 
      item.status.effectiveDateTime) if((item.status.effectiveDateTime) != null),
-    ("ActiveUpTo":
+    ("ACTIVEUPTO":
      item.status.discontinueDateTime) if((item.status.discontinueDateTime) != null) 
     }))}
