@@ -19,5 +19,5 @@ fun getOperationType(item) =
     ("ActiveFrom": 
      item.status.effectiveDateTime) if((item.status.effectiveDateTime) != null),
     ("ActiveUpto":
-     item.status.discontinueDateTime) if((item.status.discontinueDateTime) != null) 
-    }))}
+     item.status.discontinueDateTime) if((item.status.discontinueDateTime) != null)
+    }) ++ {((item.avpList.*eComStringAttributeValuePairList) map (($.@attributeName) : $))})}
